@@ -2,6 +2,9 @@ import { BrowserView, MobileView } from 'react-device-detect'
 import { Routes, Route, Link, Switch, BrowserRouter } from "react-router-dom"
 import Home from './scenes/home'
 import Menubar from './scenes/global/Menubar';
+import Diary from './scenes/diary';
+import Mission from './scenes/mission';
+import Meditation from './scenes/meditation';
 
 function App() {
   return (
@@ -13,11 +16,15 @@ function App() {
         </BrowserView>
         
         <MobileView>
-            {/* menu bar */}
-            
+
             <Routes>
               <Route path='/' element={<Home />} />
+              <Route path='/diary' element={<Diary />} />
+              <Route path='/mission' element={<Mission />} />
+              <Route path='/meditation' element={<Meditation />} />
             </Routes>
+
+            {/* menu bar */}
             <Menubar />
         </MobileView>
         

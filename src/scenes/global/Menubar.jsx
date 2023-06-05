@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
-import { BottomNavigation, BottomNavigationAction } from '@mui/material'
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import BallotIcon from '@mui/icons-material/Ballot';
@@ -14,19 +14,21 @@ function Menubar() {
   const [value, setValue] = useState(0);
 
   return (
-    <BottomNavigation 
-      sx={{width: '100%', position: 'absolute', bottom: 0}}
-      showLabels
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-    >
-      <BottomNavigationAction label="Home" to="/" component={Link} icon={<HomeIcon />}/>
-      <BottomNavigationAction label="Diary" to="/diary" component={Link} icon={<CalendarTodayIcon />}/>
-      <BottomNavigationAction label="Mission" to="/mission" component={Link} icon={<BallotIcon />}/>
-      <BottomNavigationAction label="Meditation" to="/meditation" component={Link} icon={<HeadphonesIcon />}/>
-    </BottomNavigation>
+    <Box>
+      <BottomNavigation 
+        sx={{width: '100%', position: 'absolute', bottom: 0}}
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        <BottomNavigationAction label="Home" to="/" component={Link} icon={<HomeIcon />}/>
+        <BottomNavigationAction label="Diary" to="/diary" component={Link} icon={<CalendarTodayIcon />}/>
+        <BottomNavigationAction label="Mission" to="/mission" component={Link} icon={<BallotIcon />}/>
+        <BottomNavigationAction label="Meditation" to="/meditation" component={Link} icon={<HeadphonesIcon />}/>
+      </BottomNavigation>
+    </Box>
   )
 }
 

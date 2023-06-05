@@ -16,7 +16,6 @@ function App() {
         </BrowserView>
         
         <MobileView>
-
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/diary' element={<Diary />} />

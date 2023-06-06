@@ -1,35 +1,41 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 
-export const Message = (data, isUser) => {
+export const Message = (props) => {
+
+  const type = props.isUser ? 'row-reverse' : 'row';
+  const backgroundColor = props.isUser ? 'white' : '#8da4f1';
+  const color = props.isUser ? 'black' : 'white';
+  const borderRadius = props.isUser ? '15px 0px 15px 15px' : '0px 15px 15px 15px';
 
   return (
     <Box sx={{
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: props.isUser ? 'row-reverse' : 'row',
+      alignItems: 'flex-end',
       paddingTop: '5px',
       paddingLeft: '10px',
     }}>
-      
       <Box sx={{
-        className: 'messageContent',
-        backgroundColor: 'white',
+        backgroundColor: { backgroundColor },
         marginBottom: '2px',
         maxWidth: '80%',
-        display: 'flex',
-        flexDirection: 'column',
         gap: '15px',
-        borderRadius: '0px 15px 15px 15px',
+        borderRadius: { borderRadius },
       }}>
-        <Typography variant="h6" sx={{
+        <Typography sx={{
           wordWrap: 'break-word',
-          paddingLeft: "10px",
+          multiline: true,
           maxWidth: '80%',
+          paddingLeft: "8px",
+          paddingRight: "8px",
+          fontSize: '16px',
+          color: { color },
         }}>
-          Hellogreagaekjrgjkeabrjgbaebbkjeragjk;baerk;jbvbraevbergbae
+          {props.message}
         </Typography>
       </Box>
-      
+        
       <Box sx={{
         className: 'messageTime',
       }}>
@@ -40,6 +46,7 @@ export const Message = (data, isUser) => {
           12:00
         </Typography>
       </Box>
+
     </Box>
   )
 }

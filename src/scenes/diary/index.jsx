@@ -15,7 +15,6 @@ import {
 import { Chat } from "../../components/Chat"
 import { Search } from "../../components/Search"
 import { TextInput } from "../../components/TextInput"
-import Menubar from '../global/Menubar';
 
 function Diary() {
 
@@ -65,7 +64,6 @@ function Diary() {
       </Box>
       
       {/* chat component*/}
-      <div id="chatContainer" >
       <Box ref={scroll} sx={{
         className: 'chatContainer',
         border: '1px solid red',
@@ -75,7 +73,6 @@ function Diary() {
       }}>
         <Chat />  
       </Box>
-      </div>
 
       <Box sx={{
         border: '1px solid yellow',
